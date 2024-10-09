@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Consultório Odontológico MULTIODONTO</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Rolagem suave */
+        html {
+            scroll-behavior: smooth; /* Adiciona rolagem suave */
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #383838; /* Cor alterada para #383838 */
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        /* Logo da Empresa */
+        header img.logo {
+            width: 150px;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        /* Navegação */
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            background-color: #1dbf73;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Layout do Conteúdo */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Seções */
+        section {
+            margin: 50px 0;
+        }
+
+        h2 {
+            color: #1dbf73;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: #1dbf73;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .services ul {
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            padding: 0;
+            flex-wrap: wrap; /* Permite que os itens sejam empilhados em telas menores */
+        }
+
+        .services li {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            flex: 1 1 300px; /* Define um tamanho mínimo para os itens */
+            margin: 10px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .services li:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .services li h3 {
+            font-size: 1.5rem;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .services li p {
+            font-size: 1rem;
+            color: #777;
+        }
+
+        .services li img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Seção Sobre Nós */
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #666;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* Seção Contato */
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f4f4f4;
+            padding: 40px;
+            border-radius: 10px;
+            flex-wrap: wrap; /* Permite que os itens sejam empilhados em telas menores */
+        }
+
+        .contact-info div {
+            text-align: center;
+            flex: 1 1 200px; /* Define um tamanho mínimo para os itens */
+            margin: 10px; /* Adiciona espaço entre os itens */
+        }
+
+        .contact-info div p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* Botões de Ação */
+        .whatsapp-link, .instagram-link {
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .whatsapp-link {
+            background-color: #25D366;
+        }
+
+        .instagram-link {
+            background-color: transparent;
+        }
+
+        .whatsapp-link:hover {
+            background-color: #1dbf73;
+        }
+
+        .instagram-link:hover {
+            background-color: transparent;
+        }
+
+        .instagram-link img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Estilo Responsivo */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem; /* Reduz o tamanho da fonte do cabeçalho */
+            }
+
+            header p {
+                font-size: 1rem; /* Reduz o tamanho da fonte do subtítulo */
+            }
+
+            nav a {
+                padding: 10px; /* Ajusta o padding dos links de navegação */
+                font-size: 0.9rem; /* Reduz o tamanho da fonte dos links de navegação */
+            }
+
+            .services li {
+                margin: 10px 0; /* Alinha os itens verticalmente */
+                flex: 1 1 100%; /* Faz com que os itens ocupem toda a largura em telas pequenas */
+            }
+
+            .contact-info {
+                flex-direction: column; /* Alinha os itens verticalmente em telas pequenas */
+            }
+
+            .contact-info div {
+                margin: 10px 0; /* Adiciona espaço entre os itens em telas pequenas */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <!-- Logo da empresa -->
+        <img src="https://i.imgur.com/NFExZGj.jpeg" alt="Logo MULTIODONTO" class="logo">
+        <h1>MULTIODONTO</h1>
+        <p>Multiplicando sorrisos</p>
+    </header>
+
+    <!-- Navegação -->
+    <nav>
+        <a href="#home">Início</a>
+        <a href="#services">Serviços</a>
+        <a href="#about">Sobre Nós</a>
+        <a href="#contact">Contato</a>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        
+        <!-- Seção Serviços -->
+        <section id="services" class="services">
+            <h2>Nossos Serviços</h2>
+            <ul>
+                <li>
+                    <img src="https://sorria.dentalprev.com.br/wp-content/uploads/2015/06/Com-que-frequ%C3%AAncia-devo-visitar-o-dentista-1.png" alt="Visite o dentista regularmente">
+                    <h3>Limpeza Dentária</h3>
+                    <p>Cuidamos da sua saúde bucal com técnicas avançadas de limpeza.</p>
+                </li>
+                <li>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4G0SgCNTp5uQep5pmxm785tbbWGy6L_1XBg&s" alt="Implantes Dentários">
+                    <h3>Implantes Dentários</h3>
+                    <p>Implantes modernos para restaurar seu sorriso com segurança.</p>
+                </li>
+                <li>
+                    <img src="https://sorrisologia.com.br/documents/37259750/0/Clareamento+dent%C3%A1rio+caseiro.webp/db926ee4-4996-3433-a645-bd77c5c630d6?t=1645620515445" alt="Clareamento Dental">
+                    <h3>Clareamento Dental</h3>
+                    <p>Clareamento profissional para deixar seus dentes mais brancos.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Seção Sobre Nós -->
+        <section id="about">
+            <h2>Sobre Nós</h2>
+            <p>Na MULTIODONTO, estamos comprometidos em cuidar do seu sorriso. Com uma equipe qualificada e técnicas modernas, garantimos o melhor atendimento para a sua saúde bucal.</p>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contact">
+            <h2>Contato</h2>
+            <div class="contact-info">
+                <div>
+                    <h3>Telefone</h3>
+                    <p>(11) 1234-5678</p>
+                </div>
+                <div>
+                    <h3>Email</h3>
+                    <p>contato@multiodonto.com.br</p>
+                </div>
+                <div>
+                    <h3>Endereço</h3>
+                    <p>Rua Exemplo, 123 - São Paulo, SP</p>
+                </div>
+            </div>
+            <a href="https://wa.me/5511912345678" class="whatsapp-link">Fale conosco pelo WhatsApp</a>
+            <a href="https://instagram.com/multiodonto" class="instagram-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"> Siga-nos no Instagram
+            </a>
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 MULTIODONTO - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
